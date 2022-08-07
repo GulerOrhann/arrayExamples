@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] array = {115, 12, 788, 55, -1, -8, 2, 92};
+        Scanner input = new Scanner(System.in);
+        System.out.print("Write a number : ");
+        int number = input.nextInt();
+
+        int min = 0;
+        int max = 0;
+
+        for (int num : array) {
+            if (num > max)
+                max = num;
+        }
+        for (int num : array) {
+            if (num > min && num < number)
+                min = num;
+            else if (num < max && num > number)
+                max = num;
+        }
+
+        System.out.println("Girilen Sayi :" + number);
+        System.out.println("Near minimum number of given number:" + min);
+        System.out.println("Near maximum number of given number:" + max);
+    }
+}
